@@ -5,7 +5,8 @@ defmodule Shopify.Config do
                http_client_opts: any,
                json_codec: module,
                port: pos_integer | nil,
-               scheme: binary
+               scheme: binary,
+               api_version: binary
              }
 
   defstruct host: "myshopify.com",
@@ -13,7 +14,8 @@ defmodule Shopify.Config do
             http_client_opts: [],
             json_codec: Jason,
             port: nil,
-            scheme: "https"
+            scheme: "https",
+            api_version: nil
 
   @spec new(map) :: t
   def new(overrides \\ %{}) do
